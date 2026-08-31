@@ -1,61 +1,54 @@
-# Customer Churn Prediction & Customer Behavior Analysis
+Customer Churn Prediction & Customer Behavior Analysis
 
-> End-to-end Data Science Portfolio Project
+End-to-end Data Science Portfolio Project
 
-## Overview
+Overview
 
 Project ini bertujuan untuk menganalisis perilaku pelanggan dan membangun model Machine Learning untuk memprediksi pelanggan yang berpotensi mengalami churn.
 
-Analisis dilakukan dengan menggabungkan data customer profile, transaction history, dan customer interactions untuk menghasilkan customer-level features yang dapat digunakan dalam proses analisis dan prediksi churn.
+Analisis dilakukan dengan menggabungkan data customer profile, transaction history, dan customer interactions untuk menghasilkan customer-level features yang digunakan dalam proses analisis dan prediksi churn.
 
 Project ini mencakup proses data validation, data cleaning, exploratory data analysis, data integration, feature engineering, machine learning modeling, model evaluation, feature importance, hingga business insights dan customer retention recommendations.
 
-## Business Questions
+Business Questions
+Bagaimana karakteristik pelanggan yang mengalami churn?
+Apakah aktivitas transaksi berhubungan dengan customer churn?
+Apakah tingkat engagement pelanggan berhubungan dengan customer churn?
+Faktor apa saja yang paling berkontribusi terhadap prediksi churn?
+Seberapa baik Machine Learning dapat memprediksi pelanggan yang berisiko churn?
+Bagaimana hasil prediksi dapat digunakan untuk mendukung strategi customer retention?
+Project Objective
+Melakukan data validation dan data cleaning pada beberapa sumber data pelanggan.
+Menggabungkan data customer profile, transaksi, dan interaksi pelanggan.
+Melakukan exploratory data analysis untuk memahami pola perilaku pelanggan.
+Membuat behavioral features pada tingkat pelanggan.
+Menganalisis hubungan antara aktivitas transaksi, engagement, dan churn.
+Membandingkan beberapa algoritma Machine Learning.
+Mengevaluasi performa model menggunakan Accuracy, Precision, Recall, F1-Score, dan ROC-AUC.
+Mengidentifikasi fitur yang paling berpengaruh terhadap prediksi churn.
+Menghasilkan business insights dan rekomendasi untuk mendukung customer retention.
+Dataset
 
-- Bagaimana karakteristik pelanggan yang mengalami churn?
-- Apakah aktivitas transaksi berhubungan dengan customer churn?
-- Apakah tingkat engagement pelanggan berhubungan dengan customer churn?
-- Faktor apa saja yang paling berkontribusi terhadap prediksi churn?
-- Seberapa baik Machine Learning dapat memprediksi pelanggan yang berisiko churn?
-- Bagaimana hasil prediksi dapat digunakan untuk mendukung strategi customer retention?
-
-## Project Objective
-
-- Melakukan data validation dan data cleaning pada beberapa sumber data pelanggan.
-- Menggabungkan data customer profile, transaksi, dan interaksi pelanggan.
-- Melakukan exploratory data analysis untuk memahami pola perilaku pelanggan.
-- Membuat behavioral features pada tingkat pelanggan.
-- Menganalisis hubungan antara aktivitas transaksi, engagement, dan churn.
-- Membandingkan beberapa algoritma Machine Learning.
-- Mengevaluasi performa model menggunakan Accuracy, Precision, Recall, F1-Score, dan ROC-AUC.
-- Mengidentifikasi fitur yang paling berpengaruh terhadap prediksi churn.
-- Menghasilkan business insights dan rekomendasi untuk mendukung customer retention.
-
-## Dataset
-
-Dataset yang digunakan adalah **CRROS Customer Behavior Dataset** dari Hugging Face.
+Dataset yang digunakan adalah CRROS Customer Behavior Dataset dari Hugging Face.
 
 Dataset terdiri dari beberapa sumber data:
 
-| File | Deskripsi |
-| --- | --- |
-| `customers.csv` | Informasi profil pelanggan |
-| `products.csv` | Informasi produk |
-| `transactions.csv` | Riwayat transaksi pelanggan |
-| `interactions.csv` | Aktivitas dan interaksi pelanggan |
+File	Deskripsi
+customers.csv	Informasi profil pelanggan
+products.csv	Informasi produk
+transactions.csv	Riwayat transaksi pelanggan
+interactions.csv	Aktivitas dan interaksi pelanggan
 
 Data yang digunakan dalam proses analisis:
 
-- Customers: 8,000 rows × 7 columns
-- Products: 120 rows × 5 columns
-- Transactions: 24,431 rows × 7 columns
-- Interactions: 250,000 rows × 6 columns
+Customers: 8,000 rows × 7 columns
+Products: 120 rows × 5 columns
+Transactions: 24,431 rows × 7 columns
+Interactions: 250,000 rows × 6 columns
 
 Data mentah kemudian diproses dan digabungkan menjadi dataset pada tingkat pelanggan untuk kebutuhan analisis dan Machine Learning.
 
-## Project Workflow
-
-```text
+Project Workflow
 Business Problem
        ↓
 Data Understanding
@@ -134,7 +127,7 @@ Random Forest	0.985	1.000	0.900	0.947	0.978
 Logistic Regression	0.959	0.844	0.900	0.871	0.966
 Decision Tree	0.907	0.643	0.900	0.750	0.944
 
-Berdasarkan hasil perbandingan, Random Forest dipilih sebagai final model karena memberikan performa keseluruhan terbaik dengan Accuracy 98.5%, Precision 100%, F1-Score 94.7%, dan ROC-AUC 0.978.
+Berdasarkan hasil perbandingan, Random Forest dipilih sebagai final model karena memberikan performa keseluruhan terbaik dengan Accuracy 98.5%, Precision 100.0%, F1-Score 94.7%, dan ROC-AUC 0.978.
 
 Final Model Performance
 
@@ -149,7 +142,7 @@ ROC-AUC	0.978
 
 Hasil evaluasi menunjukkan bahwa model mampu mengklasifikasikan customer churn dengan performa yang sangat baik pada data pengujian.
 
-Model menghasilkan Recall sebesar 90%, yang berarti sebagian besar pelanggan yang benar-benar churn berhasil teridentifikasi oleh model.
+Model menghasilkan Recall sebesar 90.0%, yang berarti sebagian besar pelanggan yang benar-benar churn berhasil teridentifikasi oleh model.
 
 Feature Importance
 
@@ -167,9 +160,9 @@ Rank	Feature	Importance
 9	Engagement Frequency	0.054639
 10	Marketing Interactions	0.051510
 
-Hasil tersebut menunjukkan bahwa karakteristik customer segment dan pola aktivitas pelanggan, terutama recency transaksi, recency interaksi, serta frekuensi pembelian, menjadi fitur yang penting dalam prediksi churn.
+Hasil tersebut menunjukkan bahwa customer segment dan pola aktivitas pelanggan, terutama recency transaksi, recency interaksi, serta frekuensi pembelian, menjadi fitur penting dalam prediksi churn.
 
-Catatan: feature importance menunjukkan kontribusi relatif fitur terhadap prediksi model dan tidak secara langsung membuktikan hubungan sebab-akibat.
+Catatan: Feature importance menunjukkan kontribusi relatif fitur terhadap prediksi model dan tidak secara langsung membuktikan hubungan sebab-akibat.
 
 Key Business Insights
 
@@ -227,7 +220,7 @@ Prediction Output
 
 data/processed/customer_churn_predictions_FINAL.csv
 
-File berisi hasil prediksi churn dan probabilitas churn setiap customer pada data pengujian.
+File berisi hasil prediksi churn dan probabilitas churn pada data pengujian.
 
 Final Model
 
