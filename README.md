@@ -1,54 +1,77 @@
-Customer Churn Prediction & Customer Behavior Analysis
+# Customer Churn Prediction & Customer Behavior Analysis
 
-End-to-end Data Science Portfolio Project
+> End-to-end Data Science Portfolio Project
 
-Overview
+## Overview
 
 Project ini bertujuan untuk menganalisis perilaku pelanggan dan membangun model Machine Learning untuk memprediksi pelanggan yang berpotensi mengalami churn.
 
 Analisis dilakukan dengan menggabungkan data customer profile, transaction history, dan customer interactions untuk menghasilkan customer-level features yang digunakan dalam proses analisis dan prediksi churn.
 
-Project ini mencakup proses data validation, data cleaning, exploratory data analysis, data integration, feature engineering, machine learning modeling, model evaluation, feature importance, hingga business insights dan customer retention recommendations.
+Project ini mencakup proses data validation, data cleaning, exploratory data analysis, data integration, feature engineering, machine learning modeling, model evaluation, feature importance, business insights, hingga customer retention recommendations.
 
-Business Questions
-Bagaimana karakteristik pelanggan yang mengalami churn?
-Apakah aktivitas transaksi berhubungan dengan customer churn?
-Apakah tingkat engagement pelanggan berhubungan dengan customer churn?
-Faktor apa saja yang paling berkontribusi terhadap prediksi churn?
-Seberapa baik Machine Learning dapat memprediksi pelanggan yang berisiko churn?
-Bagaimana hasil prediksi dapat digunakan untuk mendukung strategi customer retention?
-Project Objective
-Melakukan data validation dan data cleaning pada beberapa sumber data pelanggan.
-Menggabungkan data customer profile, transaksi, dan interaksi pelanggan.
-Melakukan exploratory data analysis untuk memahami pola perilaku pelanggan.
-Membuat behavioral features pada tingkat pelanggan.
-Menganalisis hubungan antara aktivitas transaksi, engagement, dan churn.
-Membandingkan beberapa algoritma Machine Learning.
-Mengevaluasi performa model menggunakan Accuracy, Precision, Recall, F1-Score, dan ROC-AUC.
-Mengidentifikasi fitur yang paling berpengaruh terhadap prediksi churn.
-Menghasilkan business insights dan rekomendasi untuk mendukung customer retention.
-Dataset
+---
 
-Dataset yang digunakan adalah CRROS Customer Behavior Dataset dari Hugging Face.
+## Business Problem
 
-Dataset terdiri dari beberapa sumber data:
+Perusahaan perlu mengidentifikasi pelanggan yang memiliki risiko churn agar dapat melakukan tindakan retensi lebih awal.
 
-File	Deskripsi
-customers.csv	Informasi profil pelanggan
-products.csv	Informasi produk
-transactions.csv	Riwayat transaksi pelanggan
-interactions.csv	Aktivitas dan interaksi pelanggan
+Project ini menjawab beberapa pertanyaan bisnis:
 
-Data yang digunakan dalam proses analisis:
+- Karakteristik seperti apa yang dimiliki pelanggan yang churn?
+- Apakah aktivitas transaksi berhubungan dengan churn?
+- Apakah tingkat engagement berhubungan dengan churn?
+- Faktor apa yang paling berpengaruh terhadap churn?
+- Seberapa baik Machine Learning dapat memprediksi pelanggan yang berisiko churn?
 
-Customers: 8,000 rows × 7 columns
-Products: 120 rows × 5 columns
-Transactions: 24,431 rows × 7 columns
-Interactions: 250,000 rows × 6 columns
+---
 
-Data mentah kemudian diproses dan digabungkan menjadi dataset pada tingkat pelanggan untuk kebutuhan analisis dan Machine Learning.
+## Project Objective
 
-Project Workflow
+Tujuan utama project ini adalah:
+
+> Membangun model Machine Learning untuk memprediksi kemungkinan customer churn berdasarkan data customer profile, transaksi, dan customer engagement.
+
+Tujuan tambahan:
+
+- Melakukan data validation dan data cleaning.
+- Melakukan exploratory data analysis.
+- Menggabungkan beberapa sumber data pelanggan.
+- Membuat behavioral features pada level pelanggan.
+- Mengidentifikasi karakteristik pelanggan yang berhubungan dengan churn.
+- Membandingkan beberapa algoritma Machine Learning.
+- Mengevaluasi performa model menggunakan beberapa metrik.
+- Mengidentifikasi feature importance.
+- Menghasilkan business insights.
+- Menyusun rekomendasi customer retention berdasarkan hasil analisis.
+
+---
+
+## Dataset
+
+Project ini menggunakan CRROS Customer Behavior Dataset yang terdiri dari beberapa sumber data:
+
+- `customers.csv` — informasi profil pelanggan.
+- `products.csv` — informasi produk.
+- `transactions.csv` — riwayat transaksi pelanggan.
+- `interactions.csv` — aktivitas interaksi pelanggan.
+
+Data mentah yang digunakan dalam project terdiri dari:
+
+| Dataset | Rows | Columns |
+|---|---:|---:|
+| Customers | 8,000 | 7 |
+| Products | 120 | 5 |
+| Transactions | 24,431 | 7 |
+| Interactions | 250,000 | 6 |
+
+Data tersebut kemudian diproses dan digabungkan menjadi customer-level dataset untuk kebutuhan analisis dan Machine Learning.
+
+---
+
+## Project Workflow
+
+```text
 Business Problem
        ↓
 Data Understanding
@@ -69,49 +92,82 @@ Machine Learning
        ↓
 Model Comparison
        ↓
-Final Model Evaluation
+Model Evaluation
        ↓
 Feature Importance
        ↓
 Business Insights
        ↓
 Customer Retention Recommendations
+Data Processing
+
+Beberapa tahapan pengolahan data yang dilakukan:
+
+Memahami struktur masing-masing dataset.
+Melakukan pengecekan kualitas data.
+Melakukan data validation.
+Menangani data sesuai kebutuhan preprocessing.
+Mengubah data transaksi dan interaksi menjadi customer-level features.
+Menggabungkan customer profile, transaction behavior, dan engagement behavior.
+Menyiapkan dataset final untuk proses Machine Learning.
 Feature Engineering
 
-Feature engineering dilakukan untuk mengubah data transaksi dan interaksi menjadi informasi yang lebih relevan pada tingkat pelanggan.
+Feature engineering dilakukan untuk mengubah data transaksi dan interaksi menjadi informasi perilaku pelanggan.
 
 Customer Profile
-Age
-Gender
-Customer Segment
-Location
-Acquisition Channel
+
+Fitur yang digunakan antara lain:
+
+age
+gender
+customer_segment
+location
+acquisition_channel
 Transaction Behavior
-Total Transactions
-Total Spending
-Average Transaction Value
-Purchase Frequency
-Unique Products
+
+Beberapa behavioral features yang digunakan:
+
+total_transactions
+total_spending
+average_transaction_value
+purchase_frequency
+unique_products
 Engagement Behavior
-Total Interactions
-Marketing Interactions
-Engagement Frequency
-Interaction Types Count
+
+Fitur engagement yang digunakan antara lain:
+
+total_interactions
+marketing_interactions
+engagement_frequency
+interaction_types_count
 Recency / Activity
-Days Since Last Purchase
-Days Since Last Interaction
 
-Feature tersebut kemudian digunakan untuk membentuk dataset final yang menjadi input untuk proses Machine Learning.
+Fitur aktivitas pelanggan yang digunakan antara lain:
 
-Machine Learning Models
+days_since_last_purchase
+days_since_last_interaction
 
-Tiga algoritma Machine Learning dibandingkan dalam project ini:
+Feature engineering dilakukan pada level pelanggan sehingga setiap customer memiliki representasi perilaku yang dapat digunakan untuk analisis dan prediksi churn.
 
-Logistic Regression — digunakan sebagai baseline model.
-Decision Tree — digunakan untuk melihat pola keputusan yang lebih interpretable.
-Random Forest — digunakan sebagai ensemble model untuk memperoleh performa prediksi yang lebih robust.
+Machine Learning
 
-Model dievaluasi menggunakan:
+Project ini membandingkan tiga algoritma Machine Learning:
+
+1. Logistic Regression
+
+Digunakan sebagai baseline model untuk melihat performa model klasifikasi linear.
+
+2. Decision Tree
+
+Digunakan untuk melihat pola keputusan dan hubungan antar fitur dalam proses klasifikasi.
+
+3. Random Forest
+
+Digunakan sebagai ensemble model untuk memperoleh performa prediksi yang lebih robust.
+
+Model Evaluation
+
+Model dibandingkan menggunakan:
 
 Accuracy
 Precision
@@ -119,125 +175,217 @@ Recall
 F1-Score
 ROC-AUC
 
-Untuk kasus churn, Recall dan F1-Score menjadi metrik penting karena model diharapkan dapat mendeteksi pelanggan yang berpotensi churn.
+Untuk kasus customer churn, Recall dan F1-Score menjadi metrik penting karena model diharapkan dapat mendeteksi pelanggan yang berisiko churn.
 
 Model Comparison
 Model	Accuracy	Precision	Recall	F1-Score	ROC-AUC
 Random Forest	0.985	1.000	0.900	0.947	0.978
 Logistic Regression	0.959	0.844	0.900	0.871	0.966
 Decision Tree	0.907	0.643	0.900	0.750	0.944
+Best Model
 
-Berdasarkan hasil perbandingan, Random Forest dipilih sebagai final model karena memberikan performa keseluruhan terbaik dengan Accuracy 98.5%, Precision 100.0%, F1-Score 94.7%, dan ROC-AUC 0.978.
+Random Forest dipilih sebagai final model karena memberikan performa terbaik berdasarkan hasil perbandingan model.
 
-Final Model Performance
-
-Final Model: Random Forest
+Final model menghasilkan:
 
 Metric	Score
-Accuracy	98.5%
-Precision	100.0%
-Recall	90.0%
-F1-Score	94.7%
+Accuracy	0.985
+Precision	1.000
+Recall	0.900
+F1-Score	0.947
 ROC-AUC	0.978
-
-Hasil evaluasi menunjukkan bahwa model mampu mengklasifikasikan customer churn dengan performa yang sangat baik pada data pengujian.
-
-Model menghasilkan Recall sebesar 90.0%, yang berarti sebagian besar pelanggan yang benar-benar churn berhasil teridentifikasi oleh model.
-
 Feature Importance
 
-Berdasarkan Random Forest, fitur dengan kontribusi terbesar terhadap prediksi churn adalah:
+Feature importance dari Random Forest digunakan untuk melihat fitur yang paling berkontribusi terhadap hasil prediksi.
 
+Top 10 Features
 Rank	Feature	Importance
-1	Customer Segment - Low	0.183388
-2	Days Since Last Interaction	0.104594
-3	Days Since Last Purchase	0.095600
-4	Purchase Frequency	0.088023
-5	Unique Products	0.072949
-6	Total Transactions	0.065895
-7	Total Spending	0.065509
-8	Total Interactions	0.055064
-9	Engagement Frequency	0.054639
-10	Marketing Interactions	0.051510
+1	customer_segment_low	0.183388
+2	days_since_last_interaction	0.104594
+3	days_since_last_purchase	0.095600
+4	purchase_frequency	0.088023
+5	unique_products	0.072949
+6	total_transactions	0.065895
+7	total_spending	0.065509
+8	total_interactions	0.055064
+9	engagement_frequency	0.054639
+10	marketing_interactions	0.051510
 
-Hasil tersebut menunjukkan bahwa customer segment dan pola aktivitas pelanggan, terutama recency transaksi, recency interaksi, serta frekuensi pembelian, menjadi fitur penting dalam prediksi churn.
+Hasil feature importance menunjukkan bahwa karakteristik customer_segment_low, aktivitas terakhir pelanggan, dan pola pembelian menjadi beberapa fitur dengan kontribusi terbesar dalam model Random Forest.
 
-Catatan: Feature importance menunjukkan kontribusi relatif fitur terhadap prediksi model dan tidak secara langsung membuktikan hubungan sebab-akibat.
+Business Insights
 
-Key Business Insights
+Berdasarkan hasil analisis data:
 
-Berdasarkan hasil analisis:
+1. Overall Churn Rate
 
-Overall churn rate sebesar 15.31%, sehingga terdapat sebagian pelanggan yang perlu mendapatkan perhatian dalam strategi retention.
-Customer segment low memiliki churn rate tertinggi sebesar 93.53% berdasarkan hasil pengelompokan customer segment.
-Pelanggan pada purchase frequency group Low memiliki churn rate sebesar 70.48%, menunjukkan bahwa rendahnya frekuensi pembelian berkaitan dengan tingkat churn yang lebih tinggi.
-Pelanggan pada engagement group Low memiliki churn rate sebesar 78.64%, menunjukkan adanya hubungan antara rendahnya aktivitas engagement dan churn.
-Pelanggan yang churn memiliki rata-rata aktivitas transaksi dan engagement yang jauh lebih rendah dibandingkan pelanggan yang tidak churn. Rata-rata total transaksi pelanggan churn adalah 2.91, dibandingkan 23.46 pada pelanggan yang tidak churn.
-Rata-rata total spending pelanggan churn adalah 48,037.83, sedangkan pelanggan yang tidak churn memiliki rata-rata total spending sebesar 418,452.85.
-Rata-rata total interactions pelanggan churn adalah 40.03, sedangkan pelanggan yang tidak churn mencapai 235.85.
-Feature importance Random Forest menunjukkan bahwa customer segment, days since last interaction, days since last purchase, dan purchase frequency merupakan beberapa fitur dengan kontribusi terbesar dalam prediksi churn.
-Customer Retention Recommendations
+Overall churn rate pada customer-level dataset adalah:
 
-Berdasarkan hasil analisis dan prediksi model, beberapa rekomendasi yang dapat diterapkan adalah:
+15.31%
 
-Prioritaskan pelanggan dengan probabilitas churn tinggi dari hasil prediksi model untuk mendapatkan tindakan retention lebih awal.
-Monitor pelanggan dengan aktivitas pembelian yang menurun, terutama pelanggan dengan purchase frequency rendah.
-Monitor pelanggan dengan engagement rendah, khususnya pelanggan yang memiliki sedikit interaksi dan sudah lama tidak melakukan aktivitas.
-Gunakan customer segment dan behavioral patterns untuk membuat strategi retention yang lebih terarah dan relevan.
-Gunakan hasil churn prediction sebagai alat prioritas, bukan sebagai kepastian bahwa pelanggan akan benar-benar churn.
-Prediction Output
+Artinya, sebagian pelanggan dalam dataset dikategorikan sebagai pelanggan yang mengalami churn.
 
-Model menghasilkan output prediksi pelanggan yang berisi:
+2. Customer Segment
 
-Customer ID
-Actual Churn
-Churn Prediction
-Prediction Label
-Churn Probability
+Customer segment low memiliki churn rate tertinggi, yaitu:
+
+93.53%
+
+Hasil ini menunjukkan adanya perbedaan yang sangat besar pada tingkat churn berdasarkan customer segment.
+
+3. Purchase Frequency
+
+Kelompok purchase frequency Low memiliki churn rate tertinggi:
+
+70.48%
+
+Hal ini menunjukkan bahwa pelanggan dengan aktivitas pembelian yang rendah memiliki tingkat churn yang lebih tinggi dalam dataset.
+
+4. Customer Engagement
+
+Kelompok engagement Low memiliki churn rate tertinggi:
+
+78.64%
+
+Pelanggan dengan tingkat engagement yang rendah menunjukkan risiko churn yang lebih tinggi dibandingkan kelompok engagement lainnya.
+
+5. Perbedaan Aktivitas Pelanggan
+
+Hasil perbandingan rata-rata behavioral features menunjukkan:
+
+Feature	No Churn	Churn
+Total Interactions	235.85	40.03
+Marketing Interactions	23.47	3.80
+Engagement Frequency	0.33	0.06
+
+Pelanggan yang mengalami churn memiliki rata-rata aktivitas interaksi dan engagement yang lebih rendah dibandingkan pelanggan yang tidak churn.
+
+Customer Churn Prediction
+
+Final Random Forest model digunakan untuk menghasilkan prediksi churn dan probabilitas churn untuk customer pada data pengujian.
+
+Output prediksi terdiri dari:
+
+customer_id
+actual
+churn_prediction
+prediction_label
+churn_probability
 
 Contoh hasil prediksi:
 
-Customer ID	Actual Churn	Prediction	Label	Churn Probability
-C00708	1	1	Churn	100.00%
-C00971	1	1	Churn	99.67%
-C00600	1	1	Churn	99.33%
-C00401	1	1	Churn	99.00%
-C00023	1	1	Churn	99.00%
+Customer ID	Actual	Prediction	Prediction Label	Churn Probability
+C00708	1	1	Churn	1.000000
+C00971	1	1	Churn	0.996667
+C00600	1	1	Churn	0.993333
+C00401	1	1	Churn	0.990000
+C00023	1	1	Churn	0.990000
 
-Output tersebut dapat digunakan sebagai dasar untuk membuat daftar prioritas pelanggan yang perlu mendapatkan perhatian dari tim customer retention.
+Model menghasilkan probabilitas churn yang dapat digunakan sebagai dasar untuk memprioritaskan pelanggan yang membutuhkan perhatian lebih lanjut.
+
+Business Recommendations
+
+Berdasarkan hasil analisis dan model:
+
+1. Prioritaskan Pelanggan Berisiko Tinggi
+
+Pelanggan yang memiliki probabilitas churn tinggi dapat diprioritaskan untuk aktivitas customer retention.
+
+2. Monitor Penurunan Aktivitas Pembelian
+
+Perusahaan dapat memonitor pelanggan dengan aktivitas pembelian dan purchase frequency yang rendah.
+
+3. Tingkatkan Customer Engagement
+
+Pelanggan dengan tingkat interaksi dan engagement rendah dapat menjadi target untuk komunikasi dan retention campaign yang lebih relevan.
+
+4. Gunakan Customer Segment dan Behavioral Pattern
+
+Strategi retention dapat disesuaikan berdasarkan customer segment serta pola transaksi dan engagement pelanggan.
+
+5. Gunakan Prediction sebagai Prioritas Retention
+
+Hasil prediksi churn sebaiknya digunakan sebagai alat untuk menentukan prioritas aktivitas retention, bukan sebagai kepastian bahwa pelanggan akan benar-benar churn.
 
 Project Output
 
 Project menghasilkan beberapa output utama:
 
-Processed Data
+data/
+├── raw/
+│   ├── customers.csv
+│   ├── products.csv
+│   ├── transactions.csv
+│   └── interactions.csv
+│
+└── processed/
+    ├── customer_features_FINAL.csv
+    └── customer_churn_predictions_FINAL.csv
+
+images/
+    └── visualization outputs
+
+models/
+    └── best_churn_FINAL.pkl
+
+notebooks/
+    └── customer_churn_analysis.ipynb
+
+.gitignore
+requirements.txt
+README.md
+Final Files
+
+Customer Features
 
 data/processed/customer_features_FINAL.csv
 
-Dataset customer-level hasil feature engineering yang digunakan dalam proses analisis dan modeling.
+Berisi customer-level features yang telah diproses dan digunakan dalam analisis.
 
 Prediction Output
 
 data/processed/customer_churn_predictions_FINAL.csv
 
-File berisi hasil prediksi churn dan probabilitas churn pada data pengujian.
+Berisi hasil prediksi churn dan probabilitas churn pelanggan.
 
 Final Model
 
 models/best_churn_FINAL.pkl
 
-File model Machine Learning terbaik yang digunakan untuk menghasilkan prediksi churn.
+Berisi model Random Forest yang dipilih sebagai final model.
 
-Visualizations
+Notebook
 
-Project juga menghasilkan visualisasi untuk mendukung:
+notebooks/customer_churn_analysis.ipynb
+
+Berisi keseluruhan proses project mulai dari data understanding hingga business recommendations.
+
+Visualization
+
+Project menghasilkan visualisasi untuk mendukung proses analisis, antara lain:
 
 Churn distribution
-Customer behavior analysis
-Transaction behavior analysis
-Engagement analysis
+Customer segment vs churn
+Transaction behavior vs churn
+Engagement behavior vs churn
 Feature importance
-Model evaluation
+Confusion matrix
+ROC curve
+
+Visualisasi digunakan untuk membantu memahami pola pelanggan dan mengevaluasi performa model.
+
+Tech Stack
+Tool	Fungsi
+Python	Pemrograman dan analisis data
+Anaconda	Environment management
+Jupyter Notebook	Data analysis dan modeling
+Pandas	Data manipulation
+NumPy	Numerical computation
+Matplotlib	Data visualization
+Seaborn	Statistical visualization
+Scikit-learn	Machine Learning
+Git	Version control
+GitHub	Project repository
 Project Structure
 customer-churn-prediction/
 
@@ -252,40 +400,52 @@ customer-churn-prediction/
 │       ├── customer_features_FINAL.csv
 │       └── customer_churn_predictions_FINAL.csv
 │
+├── images/
+│   └── visualization outputs
+│
 ├── models/
 │   └── best_churn_FINAL.pkl
 │
 ├── notebooks/
 │   └── customer_churn_analysis.ipynb
 │
-├── images/
-│   └── [visualization files]
-│
 ├── .gitignore
+├── requirements.txt
 └── README.md
-Tech Stack
-Tool	Fungsi
-Python	Programming dan data analysis
-Pandas	Data manipulation dan preprocessing
-NumPy	Numerical computation
-Matplotlib	Data visualization
-Seaborn	Statistical data visualization
-Scikit-learn	Machine Learning dan model evaluation
-Jupyter Notebook	Development dan dokumentasi analisis
-Anaconda	Python environment
-Git & GitHub	Version control dan portfolio
+Key Results
+Overall churn rate: 15.31%
+Best model: Random Forest
+Accuracy: 98.5%
+Precision: 100.0%
+Recall: 90.0%
+F1-Score: 94.7%
+ROC-AUC: 0.978
+
+Random Forest memberikan performa terbaik dibandingkan Logistic Regression dan Decision Tree pada data pengujian.
+
+Key Takeaways
+
+Beberapa temuan utama dari project:
+
+Customer segment low memiliki churn rate tertinggi dalam dataset.
+Kelompok purchase frequency Low memiliki churn rate yang lebih tinggi.
+Kelompok engagement Low menunjukkan churn rate yang lebih tinggi.
+Pelanggan churn memiliki rata-rata total interactions yang lebih rendah.
+Pelanggan churn memiliki rata-rata marketing interactions yang lebih rendah.
+customer_segment_low, days_since_last_interaction, dan days_since_last_purchase merupakan tiga fitur dengan importance tertinggi pada model Random Forest.
+Model Random Forest dapat digunakan untuk membantu memprioritaskan pelanggan yang memiliki risiko churn tinggi.
 Conclusion
 
-Project ini menunjukkan proses end-to-end dalam membangun solusi Machine Learning untuk customer churn, mulai dari memahami data, melakukan validation dan cleaning, mengintegrasikan beberapa sumber data, melakukan feature engineering, hingga membangun dan mengevaluasi model.
+Project ini membangun workflow Data Science end-to-end untuk menganalisis customer behavior dan memprediksi customer churn.
 
-Dari tiga model yang dibandingkan, Random Forest menjadi final model dengan performa terbaik, dengan Accuracy sebesar 98.5%, F1-Score sebesar 94.7%, dan ROC-AUC sebesar 0.978 pada data pengujian.
+Data customer profile, transaction history, dan customer interactions diolah menjadi customer-level features sebelum digunakan dalam proses Machine Learning.
 
-Hasil analisis juga menunjukkan bahwa pola aktivitas pelanggan seperti recency interaksi, recency pembelian, purchase frequency, jumlah transaksi, spending, dan engagement memiliki kontribusi penting dalam proses prediksi churn.
+Dari tiga model yang dibandingkan, Random Forest memberikan performa terbaik dengan Accuracy sebesar 98.5%, Precision 100%, Recall 90%, F1-Score 94.7%, dan ROC-AUC 0.978.
 
-Dengan demikian, model dapat digunakan sebagai alat pendukung untuk memprioritaskan pelanggan yang memiliki risiko churn tinggi, sehingga perusahaan dapat melakukan tindakan customer retention secara lebih terarah.
+Hasil prediksi dan behavioral insights dapat digunakan sebagai dasar untuk membantu perusahaan memprioritaskan pelanggan yang membutuhkan strategi customer retention.
 
 Author
 
 Dina Kartika Pramudita
 
-Data Science | Data Analyst | Machine Learning
+Data Science | Data Analytics | Machine Learning
